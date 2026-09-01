@@ -1,0 +1,1 @@
+export const products={adidas:"ADIDAS ORIGINAL",zara:"zara coat"}
