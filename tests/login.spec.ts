@@ -16,6 +16,7 @@ test('valid login',async({page})=>{
 
    // await page.waitForTimeout(2000);
    await loginpage.login(process.env.Test_email!,process.env.Test_password!)
+   console.log("test")
 
     await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
 
