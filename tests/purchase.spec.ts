@@ -25,7 +25,6 @@ await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/
 await dashboardpage.addProductToCart(productName);
 const productlabel= cartpage.getProduct(productName);
 await expect(productlabel).toHaveText(productName);
-console.log("testing changes")
 
 })
 
