@@ -13,8 +13,9 @@ test('valid login',async({page})=>{
     const dashboardpage=new DashboardPage(page);
     const cartpage=new CartPage(page);
 
-    await loginpage.navigate();
     const productName = products.adidas;
+
+    await loginpage.navigate();
 
    await loginpage.login(process.env.Test_email!,process.env.Test_password!)
    console.log("test")
