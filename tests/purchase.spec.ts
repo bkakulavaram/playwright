@@ -13,8 +13,9 @@ test('valid login',async({page})=>{
     const dashboardpage=new DashboardPage(page);
     const cartpage=new CartPage(page);
 
-    await loginpage.navigate();
     const productName = products.adidas;
+
+    await loginpage.navigate();
 
    await loginpage.login(process.env.Test_email!,process.env.Test_password!)
    console.log("test")
@@ -24,6 +25,7 @@ await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/
 await dashboardpage.addProductToCart(productName);
 const productlabel= cartpage.getProduct(productName);
 await expect(productlabel).toHaveText(productName);
+console.log("testing changes")
 
 })
 
