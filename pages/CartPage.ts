@@ -9,8 +9,8 @@ export class CartPage{
         this.productcards=page.locator(".ng-star-inserted");
     }
 
-     verifyproducts(product:string){
+     getProduct(product:string):Locator{
         const productlabel=this.productcards.getByRole('heading', { name: product })
-return productlabel;
+        return productlabel;
     }
 }

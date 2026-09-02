@@ -18,13 +18,10 @@ async navigate(){
     await this.page.goto("https://rahulshettyacademy.com/client/#/auth/login");
 }
 
-async login(email:string,password:string){
+async login(email:string,password:string):Promise<void>{
 
     await this.emailInput.fill(email);
     await this.password.fill(password);
     await this.loginBtn.click();
-    //await this.page.waitForLoadState();
 }
-
-
 }

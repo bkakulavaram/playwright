@@ -9,12 +9,12 @@ export class DashboardPage{
     constructor(page:Page){
         this.page=page;
         this.products = page.locator('.card-body');
-//this.products= page.locator('div.container').locator('div').nth(1)
-        this.cartBtn= page.locator('i.fa.fa-shopping-cart').first();}
+        this.cartBtn= page.locator('i.fa.fa-shopping-cart').first();
+    }
 
-    async addtocart(product:string){
+    async addProductToCart(product:string):Promise<void>{
 
- const productCard = this.products.filter({
+        const productCard = this.products.filter({
             hasText: product
         });
 
@@ -24,7 +24,11 @@ export class DashboardPage{
         );
 
         await addToCartBtn.click();
-            await this.cartBtn.click();
+
+    }
+
+    async goToCart():Promise<void>{
+                await this.cartBtn.click();
 
     }
 
